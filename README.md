@@ -11,7 +11,7 @@ I wanted to make my life easier with some common bioinformatic tasks.
 Plan to use these? Please review and test them thoroughly. This 
 readme is years after I wrote the scripts.
 
-### Many many results, many many files.
+### Many many blasts, many result files.
 
 In some extreme cases, I ran a 64 node, ~1000 CPU (~2000 hyperthreaded units) 
 High Performance Computing Cluster for a month, and at other times for 
@@ -52,14 +52,12 @@ input sequences.
 
 ### Blast one set of sequences against other sets of sequences.
 
-Over and over, I wanted to do reciprocal blasts to find potential
-orthologs and homologs between 2 species.
+Over and over, I wanted to do run tblastn to find potential
+orthologs of sequences and wanted some flexibility in file 
+naming and output.
 
-I created some of these python scripts to make this a little easier.
-
-I had multiple files with a large number of blast results and 
-wanted to extract only the best one.
-
+Some of these scripts make that easier, particularly it seemed
+I was focused on tblastn.
 
 ## Defintions
 
