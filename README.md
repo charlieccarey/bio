@@ -18,7 +18,7 @@ High Performance Computing Cluster for a month, and at other times for
 weeks (using a smaller set of nodes) at a time.
 
 I was working on a dataset of 12 de novo transcriptomes from which we 
-derived approximately 10,000,000 RNA transcripts. We had 
+derived approximately 10,000,000 predicted (assembled) RNA transcripts. We had 
 clustered those 10 Million sequences by read group and similarity to 
 generate about a million clusters. I selected the longest version from 
 each representative cluster and wanted to assign some function to it, 
