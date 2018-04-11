@@ -14,7 +14,7 @@ def get_parser():
         formatter_class = argparse.RawDescriptionHelpFormatter,
         description = 'Blasts sequences possibly one at a time, possibly various formats.',
         epilog = textwrap.dedent('''\
-        blast_html_multi_fasat_as_single_fasta.py -task tblastn -db nucl_db -query possibly_multi_fasta_prots -odir outdir
+        blast_html_multi_fasta_as_single_fasta.py -task tblastn -db nucl_db -query possibly_multi_fasta_prots -odir outdir
         '''))
     parser.add_argument('-task',
                         type=str,
