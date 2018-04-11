@@ -143,11 +143,11 @@ def main(argv=None):
 
     # print(best_blast_rec)
 
-    for f in all_blast_recs:
-        best_blast_rec = get_best_blast_rec(all_blast_recs.get(f))
+    # for f in all_blast_recs:
+    #    best_blast_rec = get_best_blast_rec(all_blast_recs.get(f))
 
-    print(best_blast_rec)
-    print_blast_rec(best_blast_rec)
+    # print(best_blast_rec)
+    # print_blast_rec(best_blast_rec)
 
 
 
