@@ -50,11 +50,14 @@ per input file was largely a result of a desired output file size.
 In the end, I did only want the single best hit for each of the 1,000,000
 input sequences.
 
-### Blast one set of sequences against other sets of sequences.
+### Manage many blasts.
 
-Over and over, I wanted to do run tblastn to find potential
-orthologs of sequences and wanted some flexibility in file 
+Over and over, I wanted to run blast to find potential
+homologs of sequences and wanted some flexibility in file 
 naming and output.
+
+And maybe I was submitting different options to test their effect on
+the quality of my results.
 
 Some of these scripts make that easier, particularly it seemed
 I was focused on tblastn.
