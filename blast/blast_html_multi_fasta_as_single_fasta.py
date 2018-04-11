@@ -2,7 +2,7 @@ from __future__ import print_function
 import os
 import sys
 import logging
-import charcar.blast.blast_helper as bh
+import charlieccarey.bio.blast.blast_helper as bh # or whatever your path is to my blast_helper
 from Bio import SeqIO
 
 logger = logging.getLogger(__name__)
