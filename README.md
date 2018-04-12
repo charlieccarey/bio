@@ -26,7 +26,8 @@ and therefore to the cluster from which it was derived.
 
 I wanted to assign some function or label to each of the 1,000,000 
 reduced set of transcripts by blastx (compare all translations of a 
-transcript to a protein). So this was a 1,000,000 against 70,000,000
+transcript to a protein) against a reference set called uniref90 having
+70 million sequences. So this was a 1,000,000 against 70,000,000
 comparison. 70,000,000,000,000 or 70 trillion pairwise comparisons. While 
 blast uses a number of tricks to cut down on the work, this is still a 
 very large computational job. 
@@ -50,13 +51,15 @@ per input file was largely a result of a desired output file size.
 In the end, I did only want the single best hit for each of the 1,000,000
 input sequences.
 
+One or more of the scripts was used to extract these.
+
 ### Manage many blasts.
 
 Over and over, I wanted to run blast to find potential
 homologs of sequences and wanted some flexibility in file 
 naming and output.
 
-And maybe I was submitting different options to test their effect on
+Or maybe I was submitting different options to test their effect on
 the quality of my results.
 
 Some of these scripts make that easier, particularly it seemed
@@ -64,81 +67,75 @@ I was focused on tblastn.
 
 ## Defintions
 
-### What are sequences?
+Sequence: 
 
-In this case a sequence refers to our representation of biological object 
-that is composed of units of the same basic type attached together to form a
+- Representation of biological objects composed of units of the same basic type attached together to form a
 longer object with emergent function.
-
-ex. A protein is represented by a series of letters, each of which refer
+- Ex. A protein is represented by a series of letters, each of which refer
 to the single Amino Acids from which it was composed.
 
-### What is a transcript?
+Transcript:
 
-A transcript is an RNA copy of, most frequently, a gene. In the case of 
-protein coding genes, the gene is transcribed into mRNA transcripts. The 
-transcripts are then translated into proteins. A single gene can produce
-multiple versions of a protein and does this by producing multiple versions
+- A transcript is an RNA copy of, most frequently, a gene. 
+- In the case of protein coding genes, the gene is transcribed into mRNA transcripts. The 
+transcripts are then translated into proteins. 
+- A single gene can produce multiple versions of a protein and does this by producing multiple versions
 of the mRNA transcripts. Most often, the different versions of the gene
 occur because of differences in splicing of a primary mRNA copy of the gene.
 
-### What is blast?
+Blast:
 
-Biologists are commonly interested in how one sequence relates to, 
+- Biologists are commonly interested in how one sequence relates to, 
 or is similar to, another sequence.
-
-For example, one might be interested in homology and orthology. 
-
-Commonly we are interested in the most similar sequence.
-
-BLAST is a tool most commonly used for this purpose. Compare one 
+- For example, one might be interested in homology and orthology. 
+- Commonly we are interested in the most similar sequence.
+- BLAST is a tool most commonly used for this purpose. Compare one 
 (or more) sequence(s) to other(s) and report scores, locations 
 etc. indicating how close they are together and describing other attributes.
+- If the score is (possibly) worth reporting, we call it a 'hit'.
 
-If the score is (possibly) worth reporting, we call it a 'hit'.
+Orthology:
 
-### What is orthology?
-
-If we take a sequence from one organism, if it is the best hit to a sequence 
+- If we take a sequence from one organism, if it is the best hit to a sequence 
 in another organism, and vice versa, we might have found orthologs. This is 
 called a 'reciprocal best hits' approach to defining orthology.
-
-Orthology means that the object represented by a sequence performs at 
+- Orthology means that the object represented by a sequence performs at 
 least some of the same function in different organisms. i.e. the gene 
 in one organism has a similar role as the 'same' or very similar gene 
 in another organism.
-
-A requirement for orthology is that you have completely sequenced all the 
+- A requirement for orthology is that you have completely sequenced all the 
 genes and or have all the protein representations for all proteins that occur 
 in both species. If one species has only 1/2 of its genes sequenced, we can't 
 say much about orthology. Nonetheless, the hits might be indicative of some 
 similarity.
 
-### What is Uniref90?
+Uniref90:
 
-71,000,000 protein sequences.
-
-There are several sets of reference sequences available for blast similarity
+- Collection of 71,000,000 protein sequences.
+- There are several sets of reference sequences available for blast similarity
 searches to help identify the possible identity and / or function of 
 transcripts of unknown, or unlabeled identity.
-
-Uniref90 is a popular collection. It is comprised of a representative protein 
-from each of the core uniref clusters. It is useful for comparison of
+- Uniref90 is one of these reference collections. 
+- It is comprised of a representative protein 
+from each of the core uniref clusters. 
+- It is useful for comparison of
 unknown sequences because it is very representative of all known proteins.
 If your particular protein does not 'hit' one of these proteins, it is 
-possibly 'space junk', a sequence from non-coding genomic regions, a 
+possibly 'space junk', an artifact of an assembly algorithm, a sequence from non-coding genomic regions, a 
 contaminant from an unsequenced taxonomic branch, or potentially 
 interesting (or uninteresting depending on your point of 
 view and practicality) as something that only exists in the species you
-are examining. Most often, when working with transcriptomes, we start querying 
+are examining. 
+- Most often, when working with assembled transcriptomes, we start querying 
 Uniref90 not with a protein, but with a transcript that 'might' come 
 from a protein coding gene. Doing the blast in this way is a little more 
 forgiving of small deletions and insertions from the sequencing process that
-would shift the reading frame of a protein. (Such frameshifts make the protein 
+would shift the reading frame of a protein.
+- (Such frameshifts make the protein 
 very different from what it should be. At the DNA or RNA level the similarity
 is preserved across most of the sequence. Blastx translates all frames, so
 there is a higher likelihood of a hit, even in the presence of frameshifts.)
-
-The uniref90 collection in April 2018 has 71,000,000 sequences, 
+- The uniref90 collection in April 2018 has 71,000,000 sequences, 
 representing the same number of protein clusters. 
-[uniref release notes](tp://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref90/uniref90.release_note)
+
+[uniref90 release notes](ftp://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref90/uniref90.release_note)
