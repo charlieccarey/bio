@@ -138,4 +138,4 @@ there is a higher likelihood of a hit, even in the presence of frameshifts.)
 - The uniref90 collection in April 2018 has 71,000,000 sequences, 
 representing the same number of protein clusters. 
 
-[uniref90 release notes](ftp://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref90/uniref90.release_note)
+[uniref90 release notes][ftp://ftp.uniprot.org/pub/databases/uniprot/uniref/uniref90/uniref90.release_note]
